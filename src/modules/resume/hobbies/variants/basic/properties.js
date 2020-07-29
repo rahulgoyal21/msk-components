@@ -5,14 +5,13 @@ const properties = {
   theme: {
     name: 'Theme',
     type: propertyTypes.THEME,
-    value: themes.light.skyBlue,
+    value: themes.dark.shadowPurple,
     required: true
   },
   headlineText: {
     name: 'Headline text',
     type: propertyTypes.STRING,
     value: 'Hobbies',
-    background: themes.dark.shadowPurple,
     required: true
   },
   hobbies: {

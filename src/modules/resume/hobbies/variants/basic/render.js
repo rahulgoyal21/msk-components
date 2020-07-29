@@ -1,5 +1,4 @@
 import React from 'react';
-import themes from 'msk-themes';
 
 const useStyles = (theme) => ({
   root: {
@@ -9,23 +8,23 @@ const useStyles = (theme) => ({
     margin: 0
   },
   hobbiesItem: {
-    margin: 0
+    margin: 5
   }
 });
 
 const Basic = ({ theme, headlineText, hobbies }) => {
-  const styles = useStyles();
+  const styles = useStyles(theme);
 
   return (
     <div
       style={{
         ...styles.root,
-        color: theme.value.contrast
+        color: 'black'
       }}
     >
       <h1
         style={{
-          backgroundColor: headlineText.background.color,
+          backgroundColor: theme.value.color,
           margin: 0,
           padding: 20,
           color: 'white'
@@ -37,10 +36,15 @@ const Basic = ({ theme, headlineText, hobbies }) => {
       <div style={{ padding: 20 }}>
         {hobbies.value.map((hobby, id) => {
           return (
-            <div key={id} style={{ lineHeight: 2 }}>
-              <h4 style={styles.hobbiesItem}>
-                {id + 1}. {hobby.value}
-              </h4>
+            <div
+              key={id}
+              style={{
+                lineHeight: 2,
+                display: 'flex'
+              }}
+            >
+              <h4 style={styles.hobbiesItem}>{id + 1}.</h4>
+              <h4 style={styles.hobbiesItem}>{hobby.value}</h4>
             </div>
           );
         })}
